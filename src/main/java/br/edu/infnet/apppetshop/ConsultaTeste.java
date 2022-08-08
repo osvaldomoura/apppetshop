@@ -4,11 +4,13 @@ import java.time.LocalDateTime;
 
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
-import br.edu.infnet.model.domain.Consulta;
+import br.edu.infnet.apppetshop.model.domain.Consulta;
 
 @Component
+@Order(4)
 public class ConsultaTeste implements ApplicationRunner{
 
 	@Override
@@ -16,21 +18,21 @@ public class ConsultaTeste implements ApplicationRunner{
 		System.out.println("#Consulta");
 		
 		Consulta consulta = new Consulta();
-		consulta.descricao = "Ortopedia";
-		consulta.data = LocalDateTime.now();
-		consulta.enfermidade = true;		
+		consulta.setDescricao("Ortopedia");
+		consulta.setData(LocalDateTime.now());
+		consulta.setEnfermidade(false);	
 		System.out.println(consulta);
 		
 		Consulta consulta2 = new Consulta();
-		consulta2.descricao = "Ultrassom";
-		consulta2.data = LocalDateTime.now();
-		consulta2.enfermidade = true;		
+		consulta2.setDescricao("Ultrassom");
+		consulta2.setData(LocalDateTime.now());
+		consulta2.setEnfermidade(true);			
 		System.out.println(consulta2);
 		
 		Consulta consulta3 = new Consulta();
-		consulta3.descricao = "RaioX";
-		consulta3.data = LocalDateTime.now();	
-		consulta3.enfermidade = true;		
+		consulta3.setDescricao("RaioX");
+		consulta3.setData(LocalDateTime.now());
+		consulta3.setEnfermidade(false);			
 		System.out.println(consulta3);
 		
 	}
